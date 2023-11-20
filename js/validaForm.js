@@ -74,6 +74,7 @@ function validarFormulario(evento) {
         return false;
     }
 
+    //validamos que el usuario seleccione una region, el valor "1" indica el index  value"1" -> "seleccione"
     if (region == 1)
     {
         alert("Favor seleccionar una región");
@@ -275,7 +276,7 @@ function mostrarComunas(id)
             select.innerHTML = '';
             for (var i = 0; i < response.length; i++) {
                 var option = document.createElement('option');
-                //el option value del select comuna tiene que ser el id_comuna para poder ingresarla correctamente a la BD.
+                //el option value del select "comuna" tiene que ser el id_comuna para poder ingresarla correctamente a la BD.
                 //fatal error si el value es string, el atributo en la BD de id_comuna es entero.
                 option.value = response[i].id_comuna;
                 option.text = response[i].nombre_comuna;
@@ -294,6 +295,7 @@ function mostrarComunas(id)
 
 }
 
+//limpiamos el formulario invocando su id.
 function limpiar() {
     $("#formVotacion")[0].reset();
 }
