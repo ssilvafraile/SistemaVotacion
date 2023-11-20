@@ -1,11 +1,11 @@
 <?php
 
+//esta clase datos contiene las funciones para utilizarlas en el ingreso,eliminacion,edicion, de datos, hereda de la clase padre conexion para utilizar sus metodos.
 class cl_datos extends cl_conexion {
 
     private $bd;
-
+    
     public function __construct() {
-
         $this->bd = $this->conectar();
         $this->setNames();
     }

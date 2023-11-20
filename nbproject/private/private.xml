@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/SistemaVotacion/vista/index.php</file>
             <file>file:/C:/xampp/htdocs/SistemaVotacion/modelo/cl_conexion.php</file>
+            <file>file:/C:/xampp/htdocs/SistemaVotacion/sql/votacion.sql</file>
             <file>file:/C:/xampp/htdocs/SistemaVotacion/js/validaForm.js</file>
             <file>file:/C:/xampp/htdocs/SistemaVotacion/controlador/ingresaFormulario.php</file>
             <file>file:/C:/xampp/htdocs/SistemaVotacion/modelo/cl_datos.php</file>
