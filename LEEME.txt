@@ -1,4 +1,6 @@
-Pasos para instalar prueba técnica php - sistema votación, como no aceptan archivos comprimidos debemos clonar el proyecto github:
+Pasos para instalar prueba técnica php - sistema votación.
+
+Primero que todo debemos clonar el proyecto de github:
 
 paso 1- Copiamos la URL de mi repositorio -> https://github.com/ssilvafraile/web-votacion-php.git
 paso 2- Abrimos Git Bash o consola de Git(debemos tener previamente instalado git en nuestro equipo.)
@@ -9,8 +11,8 @@ paso 5- Lo anterior nos descargara el proyecto completo en -> descargas -> web-v
 paso 6- Instalamos XAMPP para la base de datos(si tienes xaampp o wamp server previamente instalado, salta al paso 7, yo lo instale en el disco C:).
 paso 7- Abrimos XAMPP, iniciamos los servicios de "Apache" y "MySQL" y copiamos- pegamos nuestro proyecto "web-votacion-php" en el directorio C:\xampp\htdocs
 paso 8- Ahora debemos importar nuestra BD en xaamp, para esto, iremos a -> localhost/phpmyadmin/index.php, luego botón "importar" 
-	y seleccionamos nuestra base de datos "votacion.sql", le damos click al botón "IMPORTAR" en el pie de pagina.
-paso 9- Posteriormente ingresamos a nuestro localhost o en la siguiente URL -> localhost/web-votacion-php/vista/index.php
+	y seleccionamos nuestra base de datos "votacion.sql" (se encuentra en la carpeta "sql" del proyecto), le damos click al botón "IMPORTAR" en el pie de pagina.
+paso 9- Posteriormente ingresamos a nuestro localhost en la siguiente URL -> localhost/web-votacion-php/vista/index.php
 paos 10- listo!. a probar la web.
 
 
