@@ -121,7 +121,7 @@ function validarFormulario(evento) {
                     case 2:
                         alert("RUT duplicado, Ya votó.");
                         //limpio el textbox de rut.
-                        document.getElementById("txtRut").innerHTML = "";
+                        document.getElementById("txtRut").focus();
                         break;
                     default:
                         console.log(response);
@@ -191,7 +191,7 @@ function checkRut(rut) {
     dv = valor.slice(-1).toUpperCase();
 
     // Formatear RUN
-    rut.value = cuerpo + '-' + dv
+    rut.value = cuerpo + '-' + dv;
 
     // Si no cumple con el mínimo ej. (n.nnn.nnn)
     if (cuerpo.length < 7) {
@@ -297,7 +297,16 @@ function mostrarComunas(id)
 
 //limpiamos el formulario invocando su id.
 function limpiar() {
-    $("#formVotacion")[0].reset();
+
+    var comuna = document.getElementById("txtComuna");
+
+    // Elimina todas las opciones
+    while (comuna.options.length > 0) {
+        comuna.remove(0);
+    }
+   $("#formVotacion")[0].reset();
+
+
 }
 
 

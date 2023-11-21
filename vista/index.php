@@ -2,13 +2,19 @@
 //llamamos al archivo conectar.php y datos.php para usar usus metodos.
 require_once('../modelo/cl_conexion.php');
 require_once('../modelo/cl_datos.php');
+require_once '../modelo/DAORegion.php';
+require_once '../modelo/DAOCandidato.php';
 //instanciamos de la clase datos
 $datos = new cl_datos();
 //guardamos en una variable $candidatos lo que nos extrae de la tb_candidatos, en este caso solo id y nombre para el select 
-$candidato = $datos->getDatos("select id_candidato,nombre_candidato from tb_candidatos;");
+$daoCandidato = new DAOCandidato();
+$candidato = $daoCandidato->listarCandidatos();
+//$candidato = $datos->getDatos("select id_candidato,nombre_candidato from tb_candidatos;");
 //rescatamos los resultados de la consulta en la variable $region
 //$comuna = $datos->getDatos("select * from tb_comuna ");
-$region = $datos->getDatos("select * from tb_region");
+//$region = $datos->getDatos("select * from tb_region");
+$daoRegion = new DAORegion();
+$region = $daoRegion->listasREgiones();
 //lo utilizo para imprimir datos de la variable en pantalla.
 //print_r($candidato);
 ?>
@@ -75,7 +81,7 @@ $region = $datos->getDatos("select * from tb_region");
                             <label for="txtComuna" class="col-sm-3 col-form-label">Comuna</label>
                             <div class="col-sm-5">
                                 <select name="txtComuna" id="txtComuna" class="form-control">
-                                   
+                                    <option value="seleccione">Seleccione</option>
                                 </select>
                             </div>
                         </div>
