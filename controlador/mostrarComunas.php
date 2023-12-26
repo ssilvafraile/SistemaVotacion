@@ -25,6 +25,7 @@ $respuesta = $daoComuna->filtrarComunasID($comuna);
 //$respuesta = $d->getDatos($query_comunas_filtradas);
 
 // Convertir los objetos de la variable "respuesta a arrays asociativos
+// la variable $respuesta contiene objetos y no array.
 $array_respuesta = array();
 foreach ($respuesta as $fila) {
     $array_respuesta[] = (array) $fila;

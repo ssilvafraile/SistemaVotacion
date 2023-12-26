@@ -271,17 +271,7 @@ function mostrarComunas(id)
         url: '../controlador/mostrarComunas.php',
         success: function (response)
         {
-            var select = document.getElementById('txtComuna');
-            //limpia y carga el select con las comunas asociadas a la region.
-            select.innerHTML = '';
-            for (var i = 0; i < response.length; i++) {
-                var option = document.createElement('option');
-                //el option value del select "comuna" tiene que ser el id_comuna para poder ingresarla correctamente a la BD.
-                //fatal error si el value es string, el atributo en la BD de id_comuna es entero.
-                option.value = response[i].id_comuna;
-                option.text = response[i].nombre_comuna;
-                select.appendChild(option);
-            }
+            cargarComuna(response);
         },
         error: function (xhr, status, error) {
             // Se ejecuta cuando la solicitud AJAX tiene algún error, con console.log para ver datos/errores en pantalla.
@@ -304,9 +294,23 @@ function limpiar() {
     while (comuna.options.length > 0) {
         comuna.remove(0);
     }
-   $("#formVotacion")[0].reset();
+    $("#formVotacion")[0].reset();
+}
 
+function cargarComuna(response)
+{
+    var select = document.getElementById('txtComuna');
+    //limpia y carga el select con las comunas asociadas a la region.
+    select.innerHTML = '';
+    for (var i = 0; i < response.length; i++) {
+        var option = document.createElement('option');
+        //el option value del select "comuna" tiene que ser el id_comuna para poder ingresarla correctamente a la BD.
+        //fatal error si el value es string, el atributo en la BD de id_comuna es entero.
+        option.value = response[i].id_comuna;
+        option.text = response[i].nombre_comuna;
+        select.appendChild(option);
 
+    }
 }
 
 
